@@ -1,3 +1,6 @@
+*.key
+*.csr
+
 #Contains the following gitignores - from the github repo.
 #Java
 #JetBrains - IDEA
