@@ -11,7 +11,7 @@ import java.io.*;
 
 public class AES_Symmetric {
 
-    public static byte[] encryptAMessageWithAes(String message, SecretKey key, IvParameterSpec iv)
+    public byte[] encryptAMessageWithAes(String message, SecretKey key, IvParameterSpec iv)
             throws Exception{
         ByteArrayOutputStream out = new  ByteArrayOutputStream();
         Cipher aes = Cipher.getInstance("AES/CBC/PKCS5Padding");
@@ -28,7 +28,7 @@ public class AES_Symmetric {
         return out.toByteArray();
     }
 
-    public static String decryptAMessageWithAes(byte[] cipherText, SecretKey jey, IvParameterSpec iv)
+    public String decryptAMessageWithAes(byte[] cipherText, SecretKey jey, IvParameterSpec iv)
         throws Exception{
 
         ByteArrayInputStream in = new ByteArrayInputStream(cipherText);

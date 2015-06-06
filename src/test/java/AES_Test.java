@@ -1,3 +1,4 @@
+import org.junit.Before;
 import org.junit.Test;
 
 import javax.crypto.KeyGenerator;
@@ -13,6 +14,12 @@ import static org.junit.Assert.assertEquals;
  */
 public class AES_Test {
 
+    private AES_Symmetric AES;
+
+    @Before
+    public void setup(){
+        AES = new AES_Symmetric();
+    }
 
     @Test
     public void generateARandomKey() throws Exception{
@@ -39,8 +46,8 @@ public class AES_Test {
         random.nextBytes(buffer);
         IvParameterSpec iv = new IvParameterSpec(buffer);
 
-        byte[] cipherText = AES_Symmetric.encryptAMessageWithAes(message, key, iv);
-        String actualMessage = AES_Symmetric.decryptAMessageWithAes(cipherText, key, iv);
+        byte[] cipherText = AES.encryptAMessageWithAes(message, key, iv);
+        String actualMessage = AES.decryptAMessageWithAes(cipherText, key, iv);
 
         assertEquals(message, actualMessage);
     }
