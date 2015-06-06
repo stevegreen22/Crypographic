@@ -9,7 +9,7 @@ import javax.crypto.spec.IvParameterSpec;
 import java.io.*;
 
 
-public class GenerateARandomAESKey {
+public class AES_Symmetric {
 
     public static byte[] encryptAMessageWithAes(String message, SecretKey key, IvParameterSpec iv)
             throws Exception{

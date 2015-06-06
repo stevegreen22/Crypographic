@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by SteveGreen on 06/06/15.
  */
-public class GenerateARandomAesKeyTest {
+public class AES_Test {
 
 
     @Test
@@ -39,8 +39,8 @@ public class GenerateARandomAesKeyTest {
         random.nextBytes(buffer);
         IvParameterSpec iv = new IvParameterSpec(buffer);
 
-        byte[] cipherText = GenerateARandomAESKey.encryptAMessageWithAes(message, key, iv);
-        String actualMessage = GenerateARandomAESKey.decryptAMessageWithAes(cipherText, key, iv);
+        byte[] cipherText = AES_Symmetric.encryptAMessageWithAes(message, key, iv);
+        String actualMessage = AES_Symmetric.decryptAMessageWithAes(cipherText, key, iv);
 
         assertEquals(message, actualMessage);
     }
